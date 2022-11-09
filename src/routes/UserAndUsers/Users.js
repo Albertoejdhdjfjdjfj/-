@@ -14,8 +14,8 @@ useEffect(()=>{
        {
           users.map((item)=>(
              <div key={item.id}>
-               <Link to={`/user/${item.id}`}>
-                    <p>{item.name}</p>
+               <Link to={`/user/${item.id}`}   >
+                    <p className='user'>{item.name}</p>
                </Link>
              </div>
           ))

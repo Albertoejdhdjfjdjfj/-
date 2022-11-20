@@ -1,27 +1,16 @@
-import { Routes, Route, NavLink } from "react-router-dom";
-
+import { Routes, Route, NavLink, useNavigate } from "react-router-dom";
+import SignUp from "./routes/SignUp";
 import './App.css'
+import LogIn from "./routes/LogIn";
+import Dashboard from "./routes/Dashboad/Dashboard"
 
 export default function App (){
-
   return (
   <div>
-
-    {/* <nav>
-      <NavLink  className={({isActive})=>isActive?'link-active':''} to="/albums" style={{marginRight: '20px',textDecoration:'none'}}>
-        Albums
-      </NavLink>
-      <NavLink  to="/"  className={({isActive})=>isActive?'link-active':''} style={{marginRight: '20px',textDecoration:'none'}} >
-        Users
-      </NavLink>
-    </nav> */}
-
     <Routes>
- 
+    <Route path="/" element={<LogIn/>}/>
+    <Route path="/dashboard/*" element={<Dashboard/>}/>
     </Routes>
-
-    
-
   </div>
   )
 }

@@ -1,19 +1,79 @@
 {
-     "users": [
-        {
-         "id": 1,
-         "email": "user1@gmail.com",
-         "password": "1234",
-         "createdAt": "2022-11-04T14:36:10.980Z"
-       }
-     ],
-      "notes": [
-        {
-         "id": 1,
-         "userId": 1,
-         "title": "Первая заметка",
-         "body": "Тело первой заметки",
-         "createdAt": "2022-11-05T14:36:10.980Z"
-       }
-     ]
-   }
+  "users": [
+    {
+      "id": 1,
+      "email": "ivan",
+      "password": "1234",
+      "createdAt": "2022-11-04T14:36:10.980Z"
+    },
+    {
+      "id": 2,
+      "email": "user2@gmail.com",
+      "password": "12345",
+      "createdAt": "2022-11-04T14:36:10.980Z"
+    },
+    {
+      "id": 3,
+      "email": "user3@gmail.com",
+      "password": "123456",
+      "createdAt": "2022-11-04T14:36:10.980Z"
+    },
+    {
+      "id": 4,
+      "email": "user4@gmail.com",
+      "password": "1234567",
+      "createdAt": "2022-11-04T14:36:10.980Z"
+    }
+  ],
+  "notes": [
+    {
+      "id": 1,
+      "userId": 1,
+      "title": "Первая заметка",
+      "body": "Тело первой заметки",
+      "createdAt": "2022-11-05T14:36:10.980Z"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "title": "2 заметка",
+      "body": "Тело 1 заметки",
+      "createdAt": "2022-11-05T14:36:10.980Z"
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "title": "3 заметка",
+      "body": "Тело 3 заметки",
+      "createdAt": "2022-11-05T14:36:10.980Z"
+    },
+    {
+      "userId": 1,
+      "title": "заметка 4",
+      "body": "Артем Маклаков - лучший препод",
+      "createdAt": "20.11.22",
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "title": "pfvtnrf 5",
+      "body": "Маклаков крутой",
+      "createdAt": "20.11.22",
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "title": "лывсрыврсгывм",
+      "body": "втсилоывисрмывисмрымссывс",
+      "createdAt": "20.11.22",
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "title": "dick",
+      "body": "dick",
+      "createdAt": "20.11.22",
+      "id": 7
+    }
+  ]
+}

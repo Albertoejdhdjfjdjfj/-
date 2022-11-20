@@ -9,7 +9,7 @@ export default function ListOfNotes({notes}){
                <div>
                 {
                     notes.map((item)=>(
-                      <div  key={item.id}><NavLink to={`/dashboard/notes/${item.id}`}>{item.title} {item.createdAt}</NavLink><div> <NavLink to={`/dashboard/notes/edit/`}>Edit</NavLink> <a>Delete</a></div></div>
+                      <div  key={item.id}><NavLink to={`/dashboard/notes/${item.id}`}>{item.title} {item.createdAt}</NavLink><div> <NavLink to={`/dashboard/notes/edit/${item.id}`}>Edit</NavLink> <a>Delete</a></div></div>
                     )
                     )
                 }

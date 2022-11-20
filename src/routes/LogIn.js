@@ -1,8 +1,6 @@
-import { Routes, Route, NavLink } from "react-router-dom";
+import {  NavLink } from "react-router-dom";
 import { useState,useEffect } from "react";
-import { createContext } from "react";
 import { useNavigate } from "react-router-dom";
-import App from "../App";
 
 
  function LogIn(){
@@ -10,13 +8,13 @@ import App from "../App";
   const[password,setPassword]=useState('')
   const[eror,setEror]=useState('')
    
-  const navigate=useNavigate();
 
   useEffect(()=>
   localStorage.getItem('logIn')?navigate('/dashboard'):navigate('/')
   ,[])
   return (
   <div>
+   
      <input onChange={(e)=>{setEmail(e.target.value)}} type="email" min='8' max='20' placeholder="Email"/>
      <input onChange={(e)=>{setPassword(e.target.value)}} type="password" min='6' max='20' placeholder="Password"/>
      <button onClick={logIn}>LogIn</button >

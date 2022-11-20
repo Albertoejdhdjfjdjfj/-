@@ -1,6 +1,7 @@
+/* eslint-disable */
 import { NavLink } from 'react-router-dom';
 
-export default function ListOfNotes(notes) {
+export default function ListOfNotes({notes}) {
   return (
     <div>
       <p>Notes</p>

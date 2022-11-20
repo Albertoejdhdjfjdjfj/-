@@ -20,6 +20,17 @@
       "body": "ndbwjfberwf",
       "createdAt": "21.11.22",
       "id": 1
+    },
+    {
+      "userId": {
+        "Id": {
+          "userId": 1
+        }
+      },
+      "title": "nbcbjsdbc",
+      "body": "sdcsdcsd",
+      "createdAt": "21.11.22",
+      "id": 2
     }
   ]
 }

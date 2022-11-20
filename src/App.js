@@ -1,6 +1,5 @@
-import { Routes, Route, NavLink, useNavigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import SignUp from './routes/SignUp';
-import './App.css';
 import LogIn from './routes/LogIn';
 import Dashboard from './routes/Dashboad/Dashboard';
 

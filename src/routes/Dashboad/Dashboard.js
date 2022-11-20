@@ -4,8 +4,6 @@ import { useState, useEffect } from 'react';
 import About from './About/About';
 import Notes from './Notes/Notes';
 import LogOut from './LogOut/LogOut';
-import CreateNote from './Notes/CreateNote';
-import ViewNote from './Notes/ViewNote';
 
 export default function Dashboard() {
   const [data, setData] = useState();

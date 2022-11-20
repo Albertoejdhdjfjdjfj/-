@@ -5,7 +5,6 @@ export default function SignUp() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [repeatpassword, setRepeatPassword] = useState('');
-  const [user, setUser] = useState(true);
   const [eror, setEror] = useState('');
 
   const navigate = useNavigate();

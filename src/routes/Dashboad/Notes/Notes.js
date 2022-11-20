@@ -4,7 +4,7 @@ import ListOfNotes from './ListOfNotes';
 import CreateNote from './CreateNote';
 import ViewNote from './ViewNote';
 import EditNote from './EditNote';
-export default function Notes({ userId }) {
+export default function Notes(userId) {
   const [notes, setNotes] = useState(false);
 
   useEffect(() => {

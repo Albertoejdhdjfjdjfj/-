@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 
-export default function CreateNote({ Id }) {
+export default function CreateNote(Id) {
   const [name, setName] = useState();
   const [text, setText] = useState();
   return (

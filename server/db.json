@@ -31,6 +31,17 @@
       "body": "sdcsdcsd",
       "createdAt": "21.11.22",
       "id": 2
+    },
+    {
+      "userId": {
+        "Id": {
+          "userId": 1
+        }
+      },
+      "title": "jfnfsfer",
+      "body": "refeferf",
+      "createdAt": "21.11.22",
+      "id": 3
     }
   ]
 }

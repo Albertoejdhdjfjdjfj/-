@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom"
-import { Navigate } from "react-router-dom"
 
 export default function ListOfNotes({notes}){
      return(
@@ -9,11 +8,22 @@ export default function ListOfNotes({notes}){
                <div>
                 {
                     notes.map((item)=>(
-                      <div  key={item.id}><NavLink to={`/dashboard/notes/${item.id}`}>{item.title} {item.createdAt}</NavLink><div> <NavLink to={`/dashboard/notes/edit/${item.id}`}>Edit</NavLink> <a>Delete</a></div></div>
+                      <div  key={item.id}><NavLink to={`/dashboard/notes/${item.id}`}>{item.title} {item.createdAt}</NavLink><div> <NavLink to={`/dashboard/notes/edit/${item.id}`}>Edit</NavLink> <a onClick={()=>deleteNote(item.id)}>Delete</a></div></div>
                     )
                     )
                 }
                </div>
           </div>
      )
+     
+}
+
+function deleteNote(id){
+     fetch(`http://localhost:3001/notes/${id}`, {
+          method: 'DELETE',
+        headers: {
+            id: id
+        } 
+        })
+          
 }

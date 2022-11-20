@@ -29,7 +29,7 @@ export default function EditNote(){
     }
 
      function pushToServer(){
-          fetch(`http://localhost:3001/notes/${note.id}`, {
+          fetch(`http://localhost:3001/notes/${id}`, {
                method: 'PUT',
                body: JSON.stringify({
                 userId: note.userId,
@@ -41,8 +41,7 @@ export default function EditNote(){
                  'Content-type': 'application/json; charset=UTF-8',
                },
              })
-               .then((response) => response.json())
-               .then((json) => console.log(json));
+               
      }
 }
      

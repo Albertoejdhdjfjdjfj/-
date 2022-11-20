@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom"
 import { useState } from "react";
+
 export default function CreateNote({Id}){
      const[name,setName]=useState();
      const[text,setText]=useState();
@@ -25,8 +26,7 @@ export default function CreateNote({Id}){
                  'Content-type': 'application/json; charset=UTF-8',
                },
              })
-               .then((response) => response.json())
-               .then((json) => console.log(json));
+               
      }
 }
      

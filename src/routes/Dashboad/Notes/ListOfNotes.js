@@ -6,7 +6,7 @@ export default function ListOfNotes(userId) {
   const [notes, setNotes] = useState(false);
 
   useEffect(() => {
-    fetch(`http://localhost:3001/notes?userId=${userId}`)
+    fetch(`http://localhost:3001/notes?userId=${userId.userId.userId}`)
       .then((response) => response.json())
       .then((data) => setNotes(data));
   }, []);

@@ -25,7 +25,7 @@ export default function CreateNote(Id) {
     fetch('http://localhost:3001/notes', {
       method: 'POST',
       body: JSON.stringify({
-        userId: Id,
+        userId: Id.Id.userId,
         title: name,
         body: text,
         createdAt: formatDate(new Date())

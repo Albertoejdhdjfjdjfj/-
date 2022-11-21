@@ -22,25 +22,11 @@
       "id": 1
     },
     {
-      "userId": {
-        "Id": {
-          "userId": 1
-        }
-      },
-      "title": "лдощо",
-      "body": "лолош",
-      "id": 2
-    },
-    {
-      "userId": {
-        "Id": {
-          "userId": 1
-        }
-      },
-      "title": "sdcscc",
-      "body": "sdcscsd",
+      "userId": 1,
+      "title": "nxaddddddddd",
+      "body": "dddddddddddddddd",
       "createdAt": "21.11.22",
-      "id": 3
+      "id": 2
     }
   ]
 }

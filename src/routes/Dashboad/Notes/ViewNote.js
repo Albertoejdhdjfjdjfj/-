@@ -1,6 +1,8 @@
 import { NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import './styles/ViewNote.css';
+
 export default function ViewNote() {
   const [note, setNote] = useState();
   const { id } = useParams();
@@ -13,12 +15,14 @@ export default function ViewNote() {
 
   if (note) {
     return (
-      <div>
-        <div>
-          <NavLink to="/dashboard/notes">Back</NavLink>
-          {note.title}
+      <div className="wrapperOfPage">
+        <div className="navOfPage">
+          <NavLink className="linkBack" to="/dashboard/notes">
+            Back
+          </NavLink>
+          <h2>{note.title}</h2>
         </div>
-        <div> {note.body}</div>
+        <p className="text"> {note.body}</p>
       </div>
     );
   }

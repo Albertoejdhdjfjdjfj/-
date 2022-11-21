@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './LogIn.css';
 
 function LogIn() {
   const [email, setEmail] = useState('');
@@ -11,9 +12,14 @@ function LogIn() {
 
   useEffect(() => (localStorage.getItem('logIn') ? navigate('/dashboard') : navigate('/')), []);
   return (
-    <div>
-      <NavLink to="/signUp">SignUp</NavLink>
-      <div>LogIn</div>
+    <div className="wrapperOfPage">
+      <div className="navOfPage">
+        <NavLink className="linkSignUp" to="/signUp">
+          SignUp
+        </NavLink>
+        <h2>LogIn</h2>
+      </div>
+
       <input
         onChange={(e) => {
           setEmail(e.target.value);

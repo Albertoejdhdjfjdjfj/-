@@ -11,17 +11,19 @@
   margin-top: 2vw;
 }
 
-.inputName {
-  height: 4vw;
+.wrapperOfPage > input {
   width: 60%;
   margin-top: 2vw;
+  height: 3vw;
 }
 
-.inputText {
-  height: 5vw;
-  width: 60%;
+.wrapperOfPage > a {
   margin-top: 2vw;
+  color: black;
+  background-color: darkgray;
+  font-size: 2vw;
 }
+
 
 .navOfPage {
   width: 60%;

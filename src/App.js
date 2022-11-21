@@ -1,8 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
-import SignUp from './routes/SignUp';
-import LogIn from './routes/LogIn';
-import Dashboard from './routes/Dashboad/Dashboard';
-
+import SignUp from './routes/SignUp/SignUp';
+import LogIn from './routes/LogIn/LogIn';
+import Dashboard from './routes/Dashboad/Header/Dashboard';
 export default function App() {
   return (
     <div>

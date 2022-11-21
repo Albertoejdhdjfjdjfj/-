@@ -2,9 +2,9 @@
 import { Routes, Route, NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import About from './About/About';
-import Notes from './Notes/Notes';
-import LogOut from './LogOut/LogOut';
+import About from '../About/About';
+import Notes from '../Notes/Notes';
+import LogOut from '../LogOut/LogOut';
 import './Dashboard.css';
 
 export default function Dashboard() {

@@ -13,18 +13,8 @@ export default function CreateNote(Id) {
         </NavLink>
         <h2>Create new note</h2>
       </div>
-      <input
-        className="inputName"
-        onChange={(e) => setName(e.target.value)}
-        type="text"
-        placeholder="Name"
-      />
-      <input
-        className="inputName"
-        onChange={(e) => setText(e.target.value)}
-        type="text"
-        placeholder="Note text..."
-      />
+      <input onChange={(e) => setName(e.target.value)} type="text" placeholder="Name" />
+      <input onChange={(e) => setText(e.target.value)} type="text" placeholder="Note text..." />
       <NavLink onClick={pushToServer} to="/dashboard/notes">
         Create
       </NavLink>

@@ -21,10 +21,17 @@ h1 {
   display: flex;
   justify-content: space-between;
   margin-top: 2vw;
+  background-color: darkgrey;
 }
 
 .note > div > a {
   font-size: 3vw;
+}
+
+.image {
+  width: 2vw;
+  height: 2vw;
+  margin-right: 2vw;
 }
 
 .linkToNote {

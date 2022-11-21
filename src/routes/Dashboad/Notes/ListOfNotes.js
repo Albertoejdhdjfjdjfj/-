@@ -2,6 +2,8 @@
 import { NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import './styles/ListOfNotes.css';
+import del from '../../../images/free-icon-recycling-bin-54324.png';
+import edit from '../../../images/free-icon-pencil-637343.png';
 
 export default function ListOfNotes(userId) {
   const [notes, setNotes] = useState(false);
@@ -28,7 +30,7 @@ export default function ListOfNotes(userId) {
               <div>
                 {' '}
                 <NavLink className="linkToNote" to={`/dashboard/notes/edit/${item.id}`}>
-                  Edit
+                  <img className="image" src={edit} />
                 </NavLink>{' '}
                 <a
                   onClick={() => {
@@ -36,7 +38,7 @@ export default function ListOfNotes(userId) {
                     setNotes(false);
                   }}
                 >
-                  Delete
+                  <img className="image" src={del} />
                 </a>
               </div>
             </div>

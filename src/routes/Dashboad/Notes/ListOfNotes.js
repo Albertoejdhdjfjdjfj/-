@@ -32,11 +32,6 @@ export default function ListOfNotes(userId) {
                 <NavLink className="linkToNote" to={`/dashboard/notes/edit/${item.id}`}>
                   <img className="image" src={edit} />
                 </NavLink>{' '}
-                onClick=
-                {() => {
-                  deleteNote(item.id);
-                  setNotes(false);
-                }}
                 <img
                   onClick={() => {
                     deleteNote(item.id);

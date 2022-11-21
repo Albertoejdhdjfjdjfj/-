@@ -9,7 +9,7 @@ export default function ListOfNotes(userId) {
     fetch(`http://localhost:3001/notes?userId=${userId.userId.userId}`)
       .then((response) => response.json())
       .then((data) => setNotes(data));
-  }, []);
+  }, [notes]);
 
   if (notes) {
     return (
@@ -29,7 +29,14 @@ export default function ListOfNotes(userId) {
                 <NavLink className="linkToNote" to={`/dashboard/notes/edit/${item.id}`}>
                   Edit
                 </NavLink>{' '}
-                <a onClick={() => deleteNote(item.id)}>Delete</a>
+                <a
+                  onClick={() => {
+                    deleteNote(item.id);
+                    setNotes(false);
+                  }}
+                >
+                  Delete
+                </a>
               </div>
             </div>
           ))}

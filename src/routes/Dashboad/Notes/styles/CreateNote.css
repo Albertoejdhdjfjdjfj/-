@@ -1,0 +1,34 @@
+*{
+     margin: 0;
+     padding: 0;
+}
+
+.wrapperOfPage{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     margin-top: 2vw;
+}
+.wrapperOfPage>input{
+     width: 60%;
+     margin-top: 2vw;
+}
+
+.navOfPage {
+  width: 60%;
+  display: flex;
+  align-items: center;
+}
+
+h2{
+   font-size: 3vw;
+   display: flex;
+   align-items: center;
+   margin-left: 16vw;
+}
+
+.linkBack{
+background-color: darkgray;
+color: black;
+font-size: 2vw;
+}

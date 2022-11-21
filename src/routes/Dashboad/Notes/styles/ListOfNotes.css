@@ -1,0 +1,34 @@
+h1 {
+  text-align: center;
+  font-size: 4vw;
+  margin-top: 2vw;
+}
+
+.notesField {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.notes {
+  width: 80%;
+  margin-top: 3vw;
+}
+
+.note {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2vw;
+}
+
+.note > div > a {
+  font-size: 3vw;
+}
+
+.linkToNote {
+  width: 60%;
+  font-size: 3vw;
+  color: black;
+}

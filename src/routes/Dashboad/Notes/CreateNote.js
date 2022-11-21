@@ -1,13 +1,17 @@
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
+import './styles/CreateNote.css';
 
 export default function CreateNote(Id) {
   const [name, setName] = useState();
   const [text, setText] = useState();
   return (
-    <div>
-      <div>
-        <NavLink to="/dashboard/notes">Back</NavLink>Create new note
+    <div className="wrapperOfPage">
+      <div className="navOfPage">
+        <NavLink className="linkBack" to="/dashboard/notes">
+          Back
+        </NavLink>
+        <h2>Create new note</h2>
       </div>
       <input onChange={(e) => setName(e.target.value)} type="text" placeholder="Name" />
       <input onChange={(e) => setText(e.target.value)} type="text" placeholder="Note text..." />

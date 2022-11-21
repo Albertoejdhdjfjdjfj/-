@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import About from './About/About';
 import Notes from './Notes/Notes';
 import LogOut from './LogOut/LogOut';
+import './Dashboard.css';
 
 export default function Dashboard() {
   const [data, setData] = useState();
@@ -21,11 +22,19 @@ export default function Dashboard() {
   if (data) {
     return (
       <div>
-        <div>
-          <NavLink to="/dashboard/">About</NavLink>
-          <NavLink to="/dashboard/notes">Notes</NavLink>
-          <NavLink to="/dashboard/logout">LogOut</NavLink>
+        <div className="navigation">
           <p>Hello,{data.email}</p>
+          <div className="links">
+            <NavLink className="linkToPage" to="/dashboard/">
+              About
+            </NavLink>
+            <NavLink className="linkToPage" to="/dashboard/notes">
+              Notes
+            </NavLink>
+            <NavLink className="linkToPage" to="/dashboard/logout">
+              LogOut
+            </NavLink>
+          </div>
         </div>
         <Routes>
           <Route index element={<About data={data} />} />

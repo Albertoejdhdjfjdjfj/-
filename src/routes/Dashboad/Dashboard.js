@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { Routes, Route, NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
@@ -25,13 +26,22 @@ export default function Dashboard() {
         <div className="navigation">
           <p>Hello,{data.email}</p>
           <div className="links">
-            <NavLink className="linkToPage" to="/dashboard/">
+            <NavLink
+              className={({ isActive }) => (isActive ? 'link-active' : 'linkToPage')}
+              to="/dashboard/"
+            >
               About
             </NavLink>
-            <NavLink className="linkToPage" to="/dashboard/notes">
+            <NavLink
+              className={({ isActive }) => (isActive ? 'link-active' : 'linkToPage')}
+              to="/dashboard/notes"
+            >
               Notes
             </NavLink>
-            <NavLink className="linkToPage" to="/dashboard/logout">
+            <NavLink
+              className={({ isActive }) => (isActive ? 'link-active' : 'linkToPage')}
+              to="/dashboard/logout"
+            >
               LogOut
             </NavLink>
           </div>

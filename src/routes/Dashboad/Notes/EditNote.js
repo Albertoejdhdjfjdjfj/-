@@ -1,5 +1,6 @@
 import { NavLink, useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import './styles/EditNote.css';
 
 export default function EditNote() {
   const [note, setNote] = useState();
@@ -19,9 +20,12 @@ export default function EditNote() {
 
   if (note) {
     return (
-      <div>
-        <div>
-          <NavLink to="/dashboard/notes">Back</NavLink>Edit note
+      <div className="wrapperOfPage">
+        <div className="navOfPage">
+          <NavLink className="linkBack" to="/dashboard/notes">
+            Back
+          </NavLink>
+          <h2>Edit note</h2>
         </div>
         <input
           type="text"

@@ -1,0 +1,17 @@
+.wrapperLogOut {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wrapperLogOut > a {
+  font-size: 2vw;
+  background-color: darkgray;
+  margin-top: 2vw;
+  color: black;
+}
+
+h1 {
+  font-size: 3vw;
+  margin-top: 2vw;
+}

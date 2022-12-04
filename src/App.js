@@ -1,14 +1,37 @@
-import { Routes, Route } from 'react-router-dom';
-import SignUp from './routes/SignUp/SignUp';
-import LogIn from './routes/LogIn/LogIn';
-import Dashboard from './routes/Dashboad/Header/Dashboard';
+import { Routes, Route, NavLink } from 'react-router-dom';
+import Users from './routes/UserAndUsers/Users';
+import User from './routes/UserAndUsers/User';
+import Albums from './routes/AlbumAndAlbums/Albums';
+import Album from './routes/AlbumAndAlbums/Album';
+import Eror404 from './routes/Erors/Eror404';
+import './App.css';
+
 export default function App() {
   return (
     <div>
+      <nav>
+        <NavLink
+          className={({ isActive }) => (isActive ? 'link-active' : '')}
+          to="/albums"
+          style={{ marginRight: '20px', textDecoration: 'none' }}
+        >
+          Albums
+        </NavLink>
+        <NavLink
+          to="/"
+          className={({ isActive }) => (isActive ? 'link-active' : '')}
+          style={{ marginRight: '20px', textDecoration: 'none' }}
+        >
+          Users
+        </NavLink>
+      </nav>
+
       <Routes>
-        <Route path="/" element={<LogIn />} />
-        <Route path="/signUp" element={<SignUp />} />
-        <Route path="/dashboard/*" element={<Dashboard />} />
+        <Route path="/" element={<Users />} />
+        <Route path="/user/:id" element={<User />} />
+        <Route path="/albums" element={<Albums />} />
+        <Route path="/albums/:id" element={<Album />} />
+        <Route path="*" element={<Eror404 way="/" page="Users" />} />
       </Routes>
     </div>
   );

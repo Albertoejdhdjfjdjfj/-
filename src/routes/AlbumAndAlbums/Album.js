@@ -1,7 +1,7 @@
-import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
-import UserInfo from "./UserInfo";
-import Eror404 from "../Erors/Eror404";
+import { useParams } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import UserInfo from './UserInfo';
+import Eror404 from '../Erors/Eror404';
 
 function Album() {
   const { id } = useParams();

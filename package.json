@@ -8,8 +8,11 @@
     "@testing-library/user-event": "^13.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-redux": "^8.0.5",
     "react-router-dom": "^6.4.3",
     "react-scripts": "5.0.1",
+    "redux": "^4.2.0",
+    "redux-saga": "^1.2.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -21,7 +24,7 @@
     "server": "json-server -w server/db.json -p 3001",
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
-     "format": "prettier --write src/**/*.{js,jsx,ts,tsx,css,md,json} --config ./.prettierrc"
+    "format": "prettier --write src/**/*.{js,jsx,ts,tsx,css,md,json} --config ./.prettierrc"
   },
   "eslintConfig": {
     "extends": [

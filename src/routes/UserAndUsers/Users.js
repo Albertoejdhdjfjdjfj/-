@@ -1,18 +1,25 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchUsers } from '../../actions/userActions';
+import SomethingWentWrong from '../Erors/SomethingWentWrong';
 
 function Users() {
-  const [users, setUsers] = useState(false);
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state);
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((response) => response.json())
-      .then((json) => setUsers(json));
-  });
+    dispatch(fetchUsers());
+  }, []);
 
-  if (users) {
+  if (state.loading) {
+    return <div>Loading...</div>
+  } 
+  else if(state.error){
+      return <SomethingWentWrong/>
+  }else {
     return (
       <div className="Users">
-        {users.map((item) => (
+        {state.users.map((item) => (
           <div key={item.id}>
             <Link to={`/user/${item.id}`}>
               <p className="user">{item.name}</p>
@@ -21,8 +28,6 @@ function Users() {
         ))}
       </div>
     );
-  } else {
-    return <div>Loading...</div>;
   }
 }
 

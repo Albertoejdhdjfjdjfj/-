@@ -1,53 +1,29 @@
-import { useParams, Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import icon from '../images/album-icon.png';
-import Eror404 from '../Erors/Eror404';
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
-function User() {
-  const { id } = useParams();
-  const [user, setUser] = useState(false);
-  const [albums, setAlbums] = useState(false);
+function Users() {
+  const [users, setUsers] = useState(false);
   useEffect(() => {
-    fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
+    fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
-      .then((json) => setUser(json));
-
-    fetch(`https://jsonplaceholder.typicode.com/albums`)
-      .then((response) => response.json())
-      .then((json) => setAlbums(json));
+      .then((json) => setUsers(json));
   });
 
-  if (user.name && albums) {
+  if (users) {
     return (
-      <div>
-        <div className="userDate">
-          <a>{user.name}</a>
-          <p>Username: {user.username}</p>
-          <p>Email: {user.email}</p>
-          <p>Phone: {user.phone}</p>
-          <p>Site: {user.website}</p>
-        </div>
-
-        <div className="albums">
-          <p>Albums</p>
-          {albums
-            .filter((item) => item.userId == id)
-            .map((item) => (
-              <div key={item.id} className="album">
-                <img src={icon} />
-                <Link to={`/albums/${item.id}`} style={{ marginLeft: '10px' }}>
-                  <p>{item.title}</p>
-                </Link>
-              </div>
-            ))}
-        </div>
+      <div className="Users">
+        {users.map((item) => (
+          <div key={item.id}>
+            <Link to={`/user/${item.id}`}>
+              <p className="user">{item.name}</p>
+            </Link>
+          </div>
+        ))}
       </div>
     );
-  } else if (!user || !albums) {
-    return <div>Loading...</div>;
   } else {
-    return <Eror404 way="/" page="Users" />;
+    return <div>Loading...</div>;
   }
 }
 
-export default User;
+export default Users;

@@ -1,17 +1,16 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import icon from '../images/album-icon.png';
+import { fetchAlbums } from '../../actions/actions';
+import { useSelector, useDispatch } from 'react-redux';
 
 function Albums() {
-  const [albums, setAlbums] = useState(false);
-
+  const dispatch=useDispatch();
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/albums')
-      .then((response) => response.json())
-      .then((json) => {
-        setAlbums(json);
-      });
+   dispatch(fetchAlbums())
   });
+
+  const albums=useSelector((state)=>state.albums.albums)
 
   if (albums) {
     return (

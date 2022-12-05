@@ -1,44 +1,14 @@
-import {
-  REQUESTED_USERS,
-  REQUESTED_USERS_SUCCESS,
-  REQUESTED_USERS_FAILED
-} from '../actions/actionsTypes';
+import { combineReducers } from 'redux';
+import usersReducer from './usersReducer';
+import userReducer from './userReducer';
+import userAlbumsReducer from './userAlbumsReducer';
+import albumsReducer from './AlbumsReducer';
 
-const initialState = {
-  users: [],
-  loading: false,
-  error: false
-};
+const reducers = combineReducers({
+  users: usersReducer,
+  user: userReducer,
+  userAlbums: userAlbumsReducer,
+  albums: albumsReducer,
+});
 
-const reducer = (state = initialState, action) => {
-  switch (action.type) {
-    case REQUESTED_USERS:
-      return {
-        ...state,
-        users: [],
-        loading: true,
-        error: false
-      };
-
-    case REQUESTED_USERS_SUCCESS:
-      return {
-        ...state,
-        users: action.users,
-        loading: false,
-        error: false
-      };
-
-    case REQUESTED_USERS_FAILED:
-      return {
-        ...state,
-        users: [],
-        loading: false,
-        error: true
-      };
-
-    default:
-      return state;
-  }
-};
-
-export default reducer;
+export default reducers;

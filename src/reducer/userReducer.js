@@ -1,7 +1,7 @@
 import {
   REQUESTED_USER,
   REQUESTED_USER_SUCCESS,
-  REQUESTED_USER_FAILED,
+  REQUESTED_USER_FAILED
 } from '../actions/actionsTypes';
 
 const userState = {

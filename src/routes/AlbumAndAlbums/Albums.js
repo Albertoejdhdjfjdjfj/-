@@ -1,21 +1,26 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import icon from '../images/album-icon.png';
 import { fetchAlbums } from '../../actions/actions';
 import { useSelector, useDispatch } from 'react-redux';
+import SomethingWentWrong from '../Erors/SomethingWentWrong';
 
 function Albums() {
-  const dispatch=useDispatch();
+  const dispatch = useDispatch();
   useEffect(() => {
-   dispatch(fetchAlbums())
-  });
+    dispatch(fetchAlbums());
+  }, []);
 
-  const albums=useSelector((state)=>state.albums.albums)
+  const albums = useSelector((state) => state.albums);
 
-  if (albums) {
+  if (albums.loading) {
+    return <div>Loading...</div>;
+  } else if (albums.error) {
+    return <SomethingWentWrong />;
+  } else {
     return (
       <div>
-        {albums.map((item) => (
+        {albums.albums.map((item) => (
           <div key={item.id} className="album">
             <img src={icon} />
             <Link to={`/albums/${item.id}`} style={{ marginLeft: '10px' }}>
@@ -25,8 +30,6 @@ function Albums() {
         ))}
       </div>
     );
-  } else {
-    return <div>Loading...</div>;
   }
 }
 

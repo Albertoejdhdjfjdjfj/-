@@ -14,7 +14,7 @@ import {
   requestAlbumsEror,
   requestAlbumsSuccess
 } from '../actions/actions';
-import { FETCH_USERS,FETCH_USER,FETCH_USER_ALBUMS,FETCH_ALBUMS } from '../actions/actionsTypes';
+import { FETCH_USERS, FETCH_USER, FETCH_USER_ALBUMS, FETCH_ALBUMS } from '../actions/actionsTypes';
 
 export function* watchFetch() {
   yield takeEvery(FETCH_USERS, fetchUsersList);
@@ -55,8 +55,8 @@ export function* fetchUserAlbumsList(action) {
   try {
     yield put(requestUserAlbums());
     const data = yield call(() => {
-      return fetch(`https://jsonplaceholder.typicode.com/albums?userId=${action.id}`).then((response) =>
-        response.json()
+      return fetch(`https://jsonplaceholder.typicode.com/albums?userId=${action.id}`).then(
+        (response) => response.json()
       );
     });
     yield put(requestUserAlbumsSuccess(data));

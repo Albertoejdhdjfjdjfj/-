@@ -14,8 +14,7 @@ import {
   REQUESTED_ALBUMS,
   REQUESTED_ALBUMS_SUCCESS,
   REQUESTED_ALBUMS_FAILED,
-  FETCH_ALBUMS,
-  
+  FETCH_ALBUMS
 } from './actionsTypes';
 
 //-------USERS--------------------------------------------
@@ -110,7 +109,7 @@ export const requestAlbums = () => {
 
 export const fetchAlbums = () => {
   return {
-    type: FETCH_ALBUMS,
+    type: FETCH_ALBUMS
   };
 };
 
@@ -126,4 +125,3 @@ export const requestAlbumsEror = () => {
     type: REQUESTED_ALBUMS_FAILED
   };
 };
-

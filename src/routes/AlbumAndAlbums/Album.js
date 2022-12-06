@@ -1,40 +1,39 @@
 import { useParams } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import UserInfo from './UserInfo';
+import { useEffect } from 'react';
+import { fetchAlbum } from '../../actions/actions';
+import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import Eror404 from '../Erors/Eror404';
 
 function Album() {
   const { id } = useParams();
-  const [album, setAlbum] = useState(false);
-  const [albumData, setalbumData] = useState(false);
 
+  const dispatch = useDispatch();
   useEffect(() => {
-    fetch(`https://jsonplaceholder.typicode.com/albums/${id}/photos`)
-      .then((response) => response.json())
-      .then((json) => setAlbum(json));
+    dispatch(fetchAlbum(id));
   }, []);
 
-  useEffect(() => {
-    fetch(`https://jsonplaceholder.typicode.com/albums/${id}`)
-      .then((response) => response.json())
-      .then((json) => setalbumData(json));
-  }, []);
+  const album = useSelector((state) => state.album);
 
-  if (album && albumData.userId) {
+  console.log(album);
+  if (album.loading) {
+    return <div>Loading...</div>;
+  } else if (album.error) {
+    return <Eror404 way="/albums" page="Albums" />;
+  } else {
     return (
       <div>
         <div>
-          <UserInfo albumData={albumData} />
+          <p>{album.title}</p>
+          <p>
+            Created by: <Link to={`/user/${album.userId}`}>{album.autor}</Link>
+          </p>
         </div>
-        {album.map((item) => (
+        {album.photos.map((item) => (
           <img key={item.id} src={item.thumbnailUrl} alt={item.title} />
         ))}
       </div>
     );
-  } else if (!album && !albumData.userId) {
-    return <div>Loading...</div>;
-  } else if (album && !albumData.userId) {
-    return <Eror404 way="/albums" page="Albums" />;
   }
 }
 

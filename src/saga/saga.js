@@ -1,4 +1,4 @@
-import { takeEvery, call, put, take } from 'redux-saga/effects';
+import { takeEvery, call, put } from 'redux-saga/effects';
 
 import {
   requestUsers,
@@ -12,15 +12,25 @@ import {
   requestUserAlbumsSuccess,
   requestAlbums,
   requestAlbumsEror,
-  requestAlbumsSuccess
+  requestAlbumsSuccess,
+  requestAlbum,
+  requestAlbumEror,
+  requestAlbumSuccess
 } from '../actions/actions';
-import { FETCH_USERS, FETCH_USER, FETCH_USER_ALBUMS, FETCH_ALBUMS } from '../actions/actionsTypes';
+import {
+  FETCH_USERS,
+  FETCH_USER,
+  FETCH_USER_ALBUMS,
+  FETCH_ALBUMS,
+  FETCH_ALBUM
+} from '../actions/actionsTypes';
 
 export function* watchFetch() {
   yield takeEvery(FETCH_USERS, fetchUsersList);
   yield takeEvery(FETCH_USER, fetchUserData);
   yield takeEvery(FETCH_USER_ALBUMS, fetchUserAlbumsList);
   yield takeEvery(FETCH_ALBUMS, fetchAlbumsList);
+  yield takeEvery(FETCH_ALBUM, fetchAlbumPhotos);
 }
 
 export function* fetchUsersList() {
@@ -76,5 +86,34 @@ export function* fetchAlbumsList() {
     yield put(requestAlbumsSuccess(data));
   } catch (error) {
     yield put(requestAlbumsEror());
+  }
+}
+
+export function* fetchAlbumPhotos(action) {
+  try {
+    yield put(requestAlbum());
+    const data = yield call(() => {
+      return fetch(`https://jsonplaceholder.typicode.com/albums/${action.id}/photos`).then(
+        (response) => response.json()
+      );
+    });
+
+    const title = yield call(() => {
+      return fetch(`https://jsonplaceholder.typicode.com/albums/${action.id}`).then((response) =>
+        response.json()
+      );
+    });
+
+    const userId = title.userId;
+
+    const autor = yield call(() => {
+      return fetch(`https://jsonplaceholder.typicode.com/users/${userId}`).then((response) =>
+        response.json()
+      );
+    });
+
+    yield put(requestAlbumSuccess(data, title.title, autor.name, userId));
+  } catch (error) {
+    yield put(requestAlbumEror());
   }
 }

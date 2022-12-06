@@ -14,7 +14,11 @@ import {
   REQUESTED_ALBUMS,
   REQUESTED_ALBUMS_SUCCESS,
   REQUESTED_ALBUMS_FAILED,
-  FETCH_ALBUMS
+  FETCH_ALBUMS,
+  REQUESTED_ALBUM,
+  REQUESTED_ALBUM_SUCCESS,
+  REQUESTED_ALBUM_FAILED,
+  FETCH_ALBUM
 } from './actionsTypes';
 
 //-------USERS--------------------------------------------
@@ -123,5 +127,34 @@ export const requestAlbumsSuccess = (data) => {
 export const requestAlbumsEror = () => {
   return {
     type: REQUESTED_ALBUMS_FAILED
+  };
+};
+//--------------ALBUM--------------------------------
+export const requestAlbum = () => {
+  return {
+    type: REQUESTED_ALBUM
+  };
+};
+
+export const fetchAlbum = (id) => {
+  return {
+    type: FETCH_ALBUM,
+    id: id
+  };
+};
+
+export const requestAlbumSuccess = (data, title, autor, userId) => {
+  return {
+    type: REQUESTED_ALBUM_SUCCESS,
+    photos: data,
+    title: title,
+    autor: autor,
+    userId: userId
+  };
+};
+
+export const requestAlbumEror = () => {
+  return {
+    type: REQUESTED_ALBUM_FAILED
   };
 };

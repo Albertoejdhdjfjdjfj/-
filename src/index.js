@@ -7,7 +7,7 @@ import { createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { watchFetch } from './saga/saga';
 import { Provider } from 'react-redux';
-import reducers from './reducer/reducer';
+import reducers from './reducer/reducers';
 
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(reducers, applyMiddleware(sagaMiddleware));

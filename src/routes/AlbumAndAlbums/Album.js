@@ -19,7 +19,7 @@ function Album() {
   if (album.loading) {
     return <div>Loading...</div>;
   } else if (album.error) {
-    return <Eror404 />;
+    return <Eror404 way="/albums" page="Albums" />;
   } else {
     return (
       <div>
